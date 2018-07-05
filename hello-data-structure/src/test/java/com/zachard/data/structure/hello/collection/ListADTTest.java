@@ -101,5 +101,66 @@ public class ListADTTest {
        end = System.currentTimeMillis();
        logger.info("以向列表结尾添加元素的方式构建一个长度为1000000的双链表耗时为: {}", end - start);
     }
+    
+    /**
+     * 将元素添加到列表最前端的方法来构建列表测试
+     * 包含{@link ArrayList}和{@link LinkedList}两种不同的列表测试
+     */
+    @Test
+    public void makeListFromStartTest() {
+        
+        try {
+            logger.info("测试用例开始运行, 线程休眠3s...");
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            logger.error("线程被中断, 异常为: {}", e);
+        }
+        
+        List<Integer> arrList = new ArrayList<>();
+        
+        // 构建一个长度为100的ArrayList
+        arrList.clear();
+        long start = System.currentTimeMillis();
+        ListADT.makeListFromStart(arrList, ONE_HUNDRED);
+        long end = System.currentTimeMillis();
+        logger.info("以向列表前端添加元素的方式构建一个长度为100的数组列表耗时为: {}", end - start);
+        
+        // 构建一个长度为10000的ArrayList
+        arrList.clear();
+        start = System.currentTimeMillis();
+        ListADT.makeListFromStart(arrList, TEN_THOUSAND);
+        end = System.currentTimeMillis();
+        logger.info("以向列表前端添加元素的方式构建一个长度为10000的数组列表耗时为: {}", end - start);
+        
+        // 构建一个长度为100000000的ArrayList
+        arrList.clear();
+        start = System.currentTimeMillis();
+        ListADT.makeListFromStart(arrList, ONE_MILLION);
+        end = System.currentTimeMillis();
+        logger.info("以向列表前端添加元素的方式构建一个长度为1000000的数组列表耗时为: {}", end - start);
+        
+        List<Integer> linkedList = new LinkedList<>();
+        
+        // 构建一个长度为100的LinkedList
+        linkedList.clear();
+        start = System.currentTimeMillis();
+        ListADT.makeListFromStart(linkedList, ONE_HUNDRED);
+        end = System.currentTimeMillis();
+        logger.info("以向列表前端添加元素的方式构建一个长度为100的双链表耗时为: {}", end - start);
+        
+        // 构建一个长度为10000的LinkedList
+        linkedList.clear();
+        start = System.currentTimeMillis();
+        ListADT.makeListFromStart(linkedList, TEN_THOUSAND);
+        end = System.currentTimeMillis();
+        logger.info("以向列表前端添加元素的方式构建一个长度为10000的双链表耗时为: {}", end - start);
+        
+        // 构建一个长度为1000000的LinkedList
+        linkedList.clear();
+        start = System.currentTimeMillis();
+        ListADT.makeListFromStart(linkedList, ONE_MILLION);
+        end = System.currentTimeMillis();
+        logger.info("以向列表前端添加元素的方式构建一个长度为1000000的双链表耗时为: {}", end - start);
+    }
 
 }
