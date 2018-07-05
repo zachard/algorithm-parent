@@ -162,5 +162,77 @@ public class ListADTTest {
         end = System.currentTimeMillis();
         logger.info("以向列表前端添加元素的方式构建一个长度为1000000的双链表耗时为: {}", end - start);
     }
+    
+    /**
+     * 计算列表获取最后一个元素所需花费的时间
+     * 包含对{@link ArrayList}和{@link LinkedList}的测试
+     */
+    @Test
+    public void getTest() {
+        
+        try {
+            logger.info("测试用例开始运行, 线程休眠3s...");
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            logger.error("线程被中断, 异常为: {}", e);
+        }
+        
+        List<Integer> arrList = new ArrayList<>();
+        
+        // 计算获取长度为100的ArrayList中的最后一个元素所需的时间
+        arrList.clear();
+        ListADT.makeListFromEnd(arrList, ONE_HUNDRED);
+        long start = System.currentTimeMillis();
+        Integer data = arrList.get(arrList.size() - 1);
+        long end = System.currentTimeMillis();
+        logger.info("获取一个长度为100的数组列表中最后一个元素花费的时间为: {}, 最后一个元素值为: {}", 
+                end - start, data);
+        
+        // 计算获取长度为10000的ArrayList中最后一个元素所需的时间
+        arrList.clear();
+        ListADT.makeListFromEnd(arrList, TEN_THOUSAND);
+        start = System.currentTimeMillis();
+        data = arrList.get(arrList.size() - 1);
+        end = System.currentTimeMillis();
+        logger.info("获取一个长度为10000的数组列表中最后一个元素花费的时间为: {}, 最后一个元素值为: {}", 
+                end - start, data);
+        
+        // 计算获取长度为1000000的ArrayList中最后一个元素所需的时间
+        arrList.clear();
+        ListADT.makeListFromEnd(arrList, ONE_MILLION);
+        start = System.currentTimeMillis();
+        data = arrList.get(arrList.size() - 1);
+        end = System.currentTimeMillis();
+        logger.info("获取一个长度为1000000的数组列表中最后一个元素花费的时间为: {}, 最后一个元素值为: {}", 
+                end - start, data);
+        
+        List<Integer> linkedList = new LinkedList<>();
+        
+        // 计算获取长度为100的LinkedList中最后一个元素所需的时间
+        linkedList.clear();
+        ListADT.makeListFromEnd(linkedList, ONE_HUNDRED);
+        start = System.currentTimeMillis();
+        data = linkedList.get(linkedList.size() - 1);
+        end = System.currentTimeMillis();
+        logger.info("获取一个长度为100的双链表列表中最后一个元素花费的时间为: {}, 最后一个元素值为: {}", 
+                end - start, data);
+        
+        // 计算获取长度为10000的LinkedList中最后一个元素所需时间
+        linkedList.clear();
+        ListADT.makeListFromEnd(linkedList, TEN_THOUSAND);
+        start = System.currentTimeMillis();
+        data = linkedList.get(linkedList.size() - 1);
+        end = System.currentTimeMillis();
+        logger.info("获取一个长度为10000的双链表列表中最后一个元素花费的时间为: {}, 最后一个元素值为: {}", 
+                end - start, data);
+        
+        // 计算获取长度为1000000的LinkedList中最后一个元素所需时间
+        linkedList.clear();
+        ListADT.makeListFromEnd(linkedList, ONE_MILLION);
+        data = linkedList.get(linkedList.size() - 1);
+        end = System.currentTimeMillis();
+        logger.info("获取一个长度为1000000的双链表列表中最后一个元素花费的时间为: {}, 最后一个元素值为: {}", 
+                end - start, data);
+    }
 
 }

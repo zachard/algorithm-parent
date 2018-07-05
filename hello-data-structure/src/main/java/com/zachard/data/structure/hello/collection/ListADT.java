@@ -56,5 +56,21 @@ public class ListADT {
             list.add(0, i);
         }
     }
+    
+    /**
+     * 计算一个列表的和
+     * 
+     * @param list    需要计算和的列表
+     * @return        列表中所有元素的和
+     */
+    public static int sum(List<Integer> list) {
+        int total = 0;
+        
+        for (int i = 0; i < list.size(); i++) {
+            total = total + list.get(i);
+        }
+        
+        return total;
+    }
 
 }
