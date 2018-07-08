@@ -16,6 +16,7 @@
 
 package com.zachard.data.structure.hello.collection;
 
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -101,6 +102,22 @@ public class ListADT {
         for (Integer ele : list) {
             if (ele % 2 == 0) {
                 list.remove(ele);
+            }
+        }
+    }
+    
+    /**
+     * 通过{@link Iterator}迭代器遍历元素, 当元素为偶数时, 
+     * 通过{@link Iterator#remove()}方法删除元素
+     * 
+     * @param list    需要删除元素的列表
+     */
+    public static void removeEvensByIterator(List<Integer> list) {
+        Iterator<Integer> itr = list.iterator();
+        
+        while (itr.hasNext()) {
+            if (itr.next() % 2 == 0) {
+                itr.remove();
             }
         }
     }
