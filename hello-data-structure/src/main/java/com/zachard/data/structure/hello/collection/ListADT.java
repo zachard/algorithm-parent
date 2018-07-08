@@ -72,5 +72,23 @@ public class ListADT {
         
         return total;
     }
+    
+    /**
+     * 通过先用{@link List#get(int)}方式获取元素, 判断是否为偶数
+     * 然后调用{@link List#remove(int)}移除元素
+     * 
+     * @param list   需要删除偶数元素的列表
+     */
+    public static void removeEvensByGet(List<Integer> list) {
+        int i = 0;
+        
+        while (i < list.size()) {
+            if (list.get(i) % 2 == 0) {
+                list.remove(i);
+            } else {
+                i++;
+            }
+        }
+    }
 
 }
