@@ -301,5 +301,71 @@ public class ListADTTest {
         end = System.currentTimeMillis();
         logger.info("将长度为1000000的双链表列表(一半为奇数, 一半为偶数)中偶数移除所花费的时间为: {}", end - start);
     }
+    
+    /**
+     * 通过增强<code>for</code>循环遍历列表, 当为偶数时
+     * 通过{@link List#remove(Object)}移除元素测试
+     */
+    @Test
+    public void removeEvensByForTest() {
+        try {
+            logger.info("测试用例开始运行, 线程休眠3s...");
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            logger.error("线程被中断, 异常为: {}", e);
+        }
+        
+//        List<Integer> arrList = new ArrayList<>();
+        
+        // 计算长度为100的ArrayList中移除偶数元素所需的时间(一半为奇数, 一半为偶数)
+//        arrList.clear();
+//        ListADT.makeListFromEnd(arrList, ONE_HUNDRED);
+//        long start = System.currentTimeMillis();
+//        ListADT.removeEvensByFor(arrList);
+//        long end = System.currentTimeMillis();
+//        logger.info("将长度为100的数组列表(一半为奇数, 一半为偶数)中偶数移除所花费的时间为: {}", end - start);
+//        
+//        // 计算长度为10000的ArrayList中移除偶数元素所需的时间(一半为奇数, 一半为偶数)
+//        arrList.clear();
+//        ListADT.makeListFromEnd(arrList, TEN_THOUSAND);
+//        start = System.currentTimeMillis();
+//        ListADT.removeEvensByFor(arrList);
+//        end = System.currentTimeMillis();
+//        logger.info("将长度为10000的数组列表(一半为奇数, 一半为偶数)中偶数移除所花费的时间为: {}", end - start);
+//        
+//        // 计算长度为1000000的ArrayList中移除偶数元素所需的时间(一半为奇数, 一半为偶数)
+//        arrList.clear();
+//        ListADT.makeListFromEnd(arrList, ONE_MILLION);
+//        start = System.currentTimeMillis();
+//        ListADT.removeEvensByFor(arrList);
+//        end = System.currentTimeMillis();
+//        logger.info("将长度为1000000的数组列表(一半为奇数, 一半为偶数)中偶数移除所花费的时间为: {}", end - start);
+//        
+        List<Integer> linkedList = new LinkedList<>();
+        
+        // 计算长度为100的LinkedList中移除偶数元素所需的时间(一半为奇数, 一半为偶数)
+        linkedList.clear();
+        ListADT.makeListFromEnd(linkedList, ONE_HUNDRED);
+        long start = System.currentTimeMillis();
+        ListADT.removeEvensByFor(linkedList);
+        long end = System.currentTimeMillis();
+        logger.info("将长度为100的双链表列表(一半为奇数, 一半为偶数)中偶数移除所花费的时间为: {}", end - start);
+        
+        // 计算长度为10000的LinkedList中移除偶数元素所需的时间(一半为奇数, 一半为偶数)
+        linkedList.clear();
+        ListADT.makeListFromEnd(linkedList, TEN_THOUSAND);
+        start = System.currentTimeMillis();
+        ListADT.removeEvensByFor(linkedList);
+        end = System.currentTimeMillis();
+        logger.info("将长度为10000的双链表列表(一半为奇数, 一半为偶数)中偶数移除所花费的时间为: {}", end - start);
+        
+        // 计算长度为1000000的LinkedList中移除偶数元素所需的时间(一半为奇数, 一半为偶数)
+        linkedList.clear();
+        ListADT.makeListFromEnd(linkedList, ONE_MILLION);
+        start = System.currentTimeMillis();
+        ListADT.removeEvensByFor(linkedList);
+        end = System.currentTimeMillis();
+        logger.info("将长度为1000000的双链表列表(一半为奇数, 一半为偶数)中偶数移除所花费的时间为: {}", end - start);
+    }
 
 }

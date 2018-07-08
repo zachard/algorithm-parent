@@ -90,5 +90,19 @@ public class ListADT {
             }
         }
     }
+    
+    /**
+     * 通过增强<code>for</code>循环遍历列表, 当元素为偶数时
+     * 通过{@link List#remove(Object)}方法移除元素
+     * 
+     * @param list   需要操作的列表
+     */
+    public static void removeEvensByFor(List<Integer> list) {
+        for (Integer ele : list) {
+            if (ele % 2 == 0) {
+                list.remove(ele);
+            }
+        }
+    }
 
 }
